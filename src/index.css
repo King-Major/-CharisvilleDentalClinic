@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+}
+
+::selection {
+  background-color: #0eb9b0;
+  color: #ffffff;
+}
+
+/* Focus states stay visible — quality floor, not decoration */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #0eb9b0;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.hairline {
+  border-color: #e3eeed;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  background: #cfe6e3;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0eb9b0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
