@@ -5,13 +5,23 @@ const TONES = {
   deepteal: ["#0eb9b0", "#0a8f88", "#0b2a37"],
 };
 
-/**
- * A generated stand-in for warm, abstract clinic/material imagery —
- * soft gradient studies rather than stock photography, so there's no
- * licensing ambiguity in a client deliverable. Swap for real
- * photography once available (see README).
- */
-export default function MaterialRender({ tone = "teal", className = "" }) {
+export default function MaterialRender({ tone = "teal", images = [], alt = "", className = "" }) {
+  if (images.length > 0) {
+    return (
+      <div className={`relative grid h-full ${images.length > 1 ? "grid-cols-2" : "grid-cols-1"} gap-2 overflow-hidden rounded-3xl bg-cream-tint ${className}`}>
+        {images.map((image, index) => (
+          <img
+            key={image}
+            src={image}
+            alt={alt || `Treatment image ${index + 1}`}
+            loading="lazy"
+            className="h-full min-h-0 w-full object-cover"
+          />
+        ))}
+      </div>
+    );
+  }
+
   const [light, mid, dark] = TONES[tone] || TONES.teal;
   const uid = tone;
 

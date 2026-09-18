@@ -1,6 +1,9 @@
 import Reveal from "./Reveal.jsx";
 import SectionLabel from "./SectionLabel.jsx";
 import MaterialRender from "./MaterialRender.jsx";
+import implantsProcess from "../images/Implants Process.webp";
+import veneersAfter from "../images/Veneers After.webp";
+import veneersBefore from "../images/Veneers before.webp";
 
 const MATERIALS = [
   {
@@ -52,7 +55,11 @@ export default function Philosophy() {
 
         <div className="lg:col-span-6">
           <Reveal delay={0.15} className="relative h-[380px] md:h-[500px]">
-            <MaterialRender tone="teal" className="absolute inset-0" />
+            <MaterialRender
+              images={[implantsProcess, veneersBefore, veneersAfter]}
+              alt="Dental treatment results"
+              className="absolute inset-0"
+            />
           </Reveal>
 
           <Reveal delay={0.25} className="mt-10 border-t border-cream-line pt-8">
